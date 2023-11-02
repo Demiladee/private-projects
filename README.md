@@ -1,7 +1,6 @@
 # DEVOPS PROJECTS 
 
-This repository contains most of the real-life projects I carried out during my DevOps career journey
-
+This repository contains most of the projects I built & deployed during my DevOps training.
 ## Table Of Contents
 
 **Project 1:**    [SETTING UP A LAMP STACK WEB SERVER IN THE AWS CLOUD](https://github.com/Demiladee/private-projects/blob/main/project1.md)
