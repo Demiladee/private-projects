@@ -11,7 +11,7 @@ With my aws account already setup, I launched a new EC2 Instance of t2.micro fam
 
 As a windows user I downloaded putty application inorder to be able to connect to my EC2 Instance after converting my private key(.pem file). Since Putty does not support .pem files, I have to convert my private key (.pem format) into another file format called .ppk using PuttyGen.
 After converting my .pem file to .ppk file, I launched the Putty application and then connected to my EC2 Instance by pasting my public IP address to my Instance in the appropriate field and loaded my .ppk file in the auth section under SSH category. 
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/connecting%20to%20ec2%20machine.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/connecting%20to%20ec2%20machine.png)
 
 ## STEP 3: Installing Apache and updating firewall in the EC2 Instance
 
