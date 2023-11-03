@@ -19,7 +19,7 @@ This repository contains most of the projects I built & deployed during my DevOp
 
 **Project 8:**    [LOAD BALANCER SOLUTION WITH APACHE](https://github.com/Demiladee/private-projects/blob/main/project8.md)
 
-**Project 9:**    [WORKING WITH JENKINS - CI/CD PROJECT](https://github.co/Demiladee/private-projects/blob/main/project9.md)
+**Project 9:**    [WORKING WITH JENKINS - CI/CD PROJECT](https://github.com/Demiladee/private-projects/blob/main/project9.md)
 
 **Project 10:**   [LOAD BALANCER SOLUTION WITH NGINX AND SSL/TLS](https://github.com/Demiladee/private-projects/blob/main/project10.md)
 
