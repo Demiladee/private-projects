@@ -18,18 +18,18 @@ After converting my .pem file to .ppk file, I launched the Putty application and
 After a successful connection, next is configuring the EC2 machine to be able to serve a web server. The following are the steps I took to installing Apache on the EC2 machine on the terminal window:
 -	Updating a list of packages in package manager: `$ sudo apt update`
 -	Run apache2 package installation: `$ sudo apt install apache2`
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/installing%20apache2.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/installing%20apache2.png)
 -	To verify that apache2 is running as a Service in my OS: `$ sudo systemctl status apache2`
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/Apache2%20running%20perfectly.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/Apache2%20running%20perfectly.png)
  **Apache2 is perfectly installed**
 
 - Configuring the security group of my EC2 instance by adding a rule in the inbound section inorder to be able to listen to port 80 and also make it to allow access to any IP when it is accessed by a web browser
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/adding%20http%20rule.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/adding%20http%20rule.png)
 
 - To access it locally in my Ubuntu shell; `$ curl http://localhost:80 or curl http://127.0.0.1:80`
 
 - Testing how the Apache HTTP server can respond to requests from the Internet; Pasting my public address in the browser and tapping enter:
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/Apache2%20working%20on%20browser.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/Apache2%20working%20on%20browser.png)
 **This shows that my web server is now correctly installed and accessible through my firewall.**
 
 ## STEP 4: Installing MySQL
@@ -37,13 +37,13 @@ After a successful connection, next is configuring the EC2 machine to be able to
 Now that the server is up and running, installing MySQL gives the ability to store and manage data for my site in a relational database. The following are the steps I took to installing MySQL in the EC2 machine:
 Running the following command in a terminal window that is still connected to the EC2 instance;
 -	To acquire and install the software: `$ sudo apt install mysql-server`
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/installing%20mysql%20server.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/installing%20mysql%20server.png)
 
 - After a successful installation,  it’s recommended that one runs a security script that comes pre-installed with MySQL which removes insecure default settings and lock down access to my database system. The following command is entered:
 `$ sudo mysql_secure_installation`
 - Next is accepting to configure the VALIDATE PASSWORD PLUGIN when prompted, and selecting any of the three levels of the password validation policy and then typing a new password that corresponds to the level of password validation policy selected.
 - And finally tapping the Y and hitting Enter key at the subsequent prompt that follow after which will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MySQL immediately respects the changes you have made.
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/mysql%20secure%20installation.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/mysql%20secure%20installation.png)
 
 -	Testing if I am able to log into MySQL console: `$ sudo mysql`
 
@@ -53,11 +53,11 @@ The following steps are taken to installing PHP in the Instance which will allow
 
 -	Installing PHP and two other packages: `$ sudo apt install php libapache2-mod-php php-mysql`
 
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/installing%20php.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/installing%20php.png)
 
 -	To confirm the PHP version installed: `$ php –v`
 
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/php%20installed%20perfectly.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/php%20installed%20perfectly.png)
 
 At this point the LAMP stack is completely installed and fully operational
 
@@ -78,7 +78,7 @@ Apache on Ubuntu 20.04 has one server block enabled by default that is configure
 	    CustomLog ${APACHE_LOG_DIR}/access.log combined
 	</VirtualHost>
  ```
- ![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/configuring%20virtual%20host.png)
+ ![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/configuring%20virtual%20host.png)
  
  - Save and quit by hitting esc key and typing :wq and pressing enter key
  
@@ -89,11 +89,11 @@ Apache on Ubuntu 20.04 has one server block enabled by default that is configure
 -	Reloading Apache so these changes take effect: `$ sudo systemctl reload apache2`
 -	Creating an index.html file in the location of my domain directory inorder to test that the virtual host works as expected : `$ sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.htm`
 
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/enabling%20the%20new%20config.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/enabling%20the%20new%20config.png)
 
 -	Running my IP address on the browser to test if it works as expected
 
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/new%20virtual%20host%20working%20on%20browser.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/new%20virtual%20host%20working%20on%20browser.png)
 
 ## STEP 7: Enabling PHP on the website
 
@@ -116,11 +116,11 @@ With the default DirectoryIndex settings on Apache, a file named index.html will
  <?php
 phpinfo();
 ```
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/editing%20the%20dir%20file.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/editing%20the%20dir%20file.png)
 
-- Refreshing my web page and woala!
+- Refreshing my web page and voila!
 
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/lamp-images/php%20working%20on%20browser.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/lamp-images/php%20working%20on%20browser.png)
 
 Removing the php file as it contains sensitive information about your PHP environment and my Ubuntu server
 $ sudo rm /var/www/projectlamp/index.php
