@@ -1,6 +1,6 @@
 # AUTOMATING INFRASTRUCTURE WITH IAC USING TERRAFORM - PART 2
 ## INTRODUCTION
-In continuation to [project 16](https://github.com/somex6/Darey.io-Projects/blob/main/project16.md), the remaining resources are created in this project in order to set up a secured infrastructure with Terraform
+In continuation to [project 16](https://github.com/Demiladee/private-projects/blob/main/project16.md), the remaining resources are created in this project in order to set up a secured infrastructure with Terraform
 
 ## STEP 1: Creating Private Subnet
 - Due to the AZ of eu-central-1 region is not up to 4 which will return error since it is 4 private subnet that is needed, therefore **random_shuffle** resource is introduced and then specifying the maximum subnet:
@@ -677,11 +677,11 @@ resource "aws_lb_listener_rule" "tooling-listener" {
 - Entering the following codes which creates notification for all the auto scaling group:
 ```
 #### creating sns topic for all the auto scaling groups
-resource "aws_sns_topic" "somex-sns" {
+resource "aws_sns_topic" "user-sns" {
   name = "Default_CloudWatch_Alarms_Topic"
 }
 
-resource "aws_autoscaling_notification" "somex_notifications" {
+resource "aws_autoscaling_notification" "user_notifications" {
   group_names = [
     aws_autoscaling_group.bastion-asg.name,
     aws_autoscaling_group.nginx-asg.name,
@@ -695,7 +695,7 @@ resource "aws_autoscaling_notification" "somex_notifications" {
     "autoscaling:EC2_INSTANCE_TERMINATE_ERROR",
   ]
 
-  topic_arn = aws_sns_topic.somex-sns.arn
+  topic_arn = aws_sns_topic.user-sns.arn
 }
 
 # Create Launch Template for bastion
@@ -981,7 +981,7 @@ yum install -y ansible
 yum install -y nginx
 systemctl start nginx
 systemctl enable nginx
-git clone https://github.com/somex6/ACS-project-config.git
+git clone https://github.com/Demiladee/ACS-project-config.git
 mv /ACS-project-config/reverse.conf /etc/nginx/
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf-distro
 cd /etc/nginx/
@@ -1059,7 +1059,7 @@ resource "aws_kms_key" "ACS-kms" {
     {
       "Sid": "Enable IAM User Permissions",
       "Effect": "Allow",
-      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/somex-terraform" },
+      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/user-terraform" },
       "Action": "kms:*",
       "Resource": "*"
     }
@@ -1170,7 +1170,7 @@ resource "aws_db_instance" "ACS-rds" {
   engine                 = "mysql"
   engine_version         = "5.7"
   instance_class         = "db.t2.micro"
-  db_name                = "somex"
+  db_name                = "user"
   username               = var.master-username
   password               = var.master-password
   parameter_group_name   = "default.mysql5.7"
@@ -1183,13 +1183,13 @@ resource "aws_db_instance" "ACS-rds" {
 
 ## STEP 12: Executing Terraform Apply
 
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-1.png)
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-2.png)
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-3.png)
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-4.png)
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-5.png)
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-6.png)
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-7.png)
-![](https://github.com/somex6/Darey.io-Projects/blob/main/img/project17/apply-8.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-1.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-2.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-3.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-4.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-5.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-6.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-7.png)
+![](https://github.com/Demiladee/private-projects/blob/main/img/project17/apply-8.png)
 
-This [link](https://github.com/somex6/terraform-project17) contains the repo of the codes used in this project 17
+This [link](https://github.com/Demiladee/terraform-project17) contains the repo of the codes used in this project 17

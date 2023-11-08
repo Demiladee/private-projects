@@ -35,8 +35,8 @@ For the remote host(server B) to be able to connect to server B, mysql-server is
 To be able to connect to server A from server B a remote user is created and granted privileges:
 -	Activating mysql shell: `$ sudo mysql`
 -	Creating a database: `mysql>	CREATE DATABASE todoapp;`
--	Creating a remote user with server B’s ip_address: `mysql>	CREATE USER 'remote_some'@'3.88.230.169' IDENTIFIED BY 'password12345';`
--	Granting the remote user full access to the database:`mysql>  GRANT ALL PRIVILEGES ON todoapp.* TO 'remote_some'@'3.88.230.169';`
+-	Creating a remote user with server B’s ip_address: `mysql>	CREATE USER 'remote_user'@'3.88.230.169' IDENTIFIED BY 'password12345';`
+-	Granting the remote user full access to the database:`mysql>  GRANT ALL PRIVILEGES ON todoapp.* TO 'remote_user'@'3.88.230.169';`
 -	Lastly, flushing the privileges so that MySQL will begin to use them: `mysql>	 FLUSH PRIVILEGES;`
 -	Exit: `mysql>	 exit`
 ![](https://github.com/Demiladee/private-projects/blob/main/img/project5/creating%20a%20mysql%20user%20in%20server-A.png)
@@ -48,7 +48,7 @@ To be able to connect to server A from server B a remote user is created and gra
 ## STEP 7:	INSTALLING MYSQL-CLIENT IN SERVER B AND CONNECTING TO SERVER A
 -	Installing MySQL client utilities: `$ sudo apt install mysql-client`
 ![](https://github.com/Demiladee/private-projects/blob/main/img/project5/installing%20mysql-client%20on%20server%20B.png)
--	Lastly, connecting to the database server(server A) with its ip address: `$ mysql -u remote_some -h 3.83.11.153 –p`
+-	Lastly, connecting to the database server(server A) with its ip address: `$ mysql -u remote_user -h 3.83.11.153 –p`
 ![](https://github.com/Demiladee/private-projects/blob/main/img/project5/connecting%20to%20mysql%20server%20from%20the%20client%20server.png)
 -	**Connection established!**
 
